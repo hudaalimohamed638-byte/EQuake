@@ -766,9 +766,9 @@ before_image = BASE_DIR / "images" / "Screenshot 2026-11-15 140003.png"
 
 after_image = BASE_DIR / "images" / "Screenshot 2026-11-15 140015.png"
 
-    left, right = st.columns(2)
+left, right = st.columns(2)
 
-    with left:
+with left:
         st.subheader("BEFORE EARTHQUAKE")
 
         if before_image.exists():
