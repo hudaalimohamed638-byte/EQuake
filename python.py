@@ -756,25 +756,41 @@ elif page == "Event Details":
 
 
 # -------------------- EARTHQUAKE IMAGE GALLERY --------------------
+
+# -------------------- EARTHQUAKE IMAGE GALLERY --------------------
 elif page == "Earthquake Image Gallery":
 
     section_title("Tohoku Earthquake 2011 | Before & After")
 
+    # Project folder
     BASE_DIR = Path(__file__).resolve().parent
 
-before_image = BASE_DIR / "images" / "Screenshot 2026-11-15 140003.png"
+    # Image paths inside the GitHub repository
+    before_image = (
+        BASE_DIR / "images" /
+        "Screenshot 2026-11-15 140003.png"
+    )
 
-after_image = BASE_DIR / "images" / "Screenshot 2026-11-15 140015.png"
+    after_image = (
+        BASE_DIR / "images" /
+        "Screenshot 2026-11-15 140015.png"
+    )
 
-left, right = st.columns(2)
+    # Check image availability
+    left, right = st.columns(2)
 
-with left:
+    with left:
         st.subheader("BEFORE EARTHQUAKE")
 
         if before_image.exists():
-            st.image(str(before_image), use_container_width=True)
+            st.image(
+                str(before_image),
+                use_container_width=True
+            )
         else:
-            st.error(f"Before image not found: {before_image}")
+            st.error(
+                f"Before image not found: {before_image}"
+            )
 
         st.markdown("**Image Description**")
         st.write(
@@ -793,9 +809,14 @@ with left:
         st.subheader("AFTER EARTHQUAKE")
 
         if after_image.exists():
-            st.image(str(after_image), use_container_width=True)
+            st.image(
+                str(after_image),
+                use_container_width=True
+            )
         else:
-            st.error(f"After image not found: {after_image}")
+            st.error(
+                f"After image not found: {after_image}"
+            )
 
         st.markdown("**Image Description**")
         st.write(
@@ -812,6 +833,8 @@ with left:
 
     st.caption("Tohoku Earthquake — 11 March 2011")
 
+
+# -------------------- SAR ANALYSIS --------------------
 
 # -------------------- SAR ANALYSIS --------------------
 elif page == "SAR Analysis":
