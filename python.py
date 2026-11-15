@@ -760,13 +760,11 @@ elif page == "Earthquake Image Gallery":
 
     section_title("Tohoku Earthquake 2011 | Before & After")
 
-    before_image = Path(
-        r"C:\Users\Timo Store\Pictures\Screenshots\Screenshot 2026-11-15 140003.png"
-    )
+    BASE_DIR = Path(__file__).resolve().parent
 
-    after_image = Path(
-        r"C:\Users\Timo Store\Pictures\Screenshots\Screenshot 2026-11-15 140015.png"
-    )
+before_image = BASE_DIR / "images" / "Screenshot 2026-11-15 140003.png"
+
+after_image = BASE_DIR / "images" / "Screenshot 2026-11-15 140015.png"
 
     left, right = st.columns(2)
 
